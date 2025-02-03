@@ -1,0 +1,18 @@
+// Variable overrides
+//
+// If you want to customize your project please add your variables below.
+
+$enable-deprecation-messages: false !default;
+$enable-dark-mode: true;
+$enable-blue-mode: true;
+// Blue Theme Color Palette
+$blue-bg: #06113d;               // Deep blue for background (professional and clean)
+$blue-bg-subtle: #06113d;        // Light blue for subtle backgrounds (soft and soothing)
+$blue-text: #f0f9ff;             // Light text color for readability on blue backgrounds
+$blue-primary: #06113d;          // Vibrant blue for accents and borders (bright and noticeable)
+$blue-secondary: #475464;        // Soft light blue for secondary sections and highlights
+$blue-accent: #06113d;           // Lively blue for interactive elements like links or icons
+$blue-hover: #1f326e;            // Slightly darker blue for hover states (gentle contrast)
+$blue-border: #06113d;           // Deep blue for borders, providing subtle distinction  
+$blue-gradient-start: #06113d;   // Starting color of gradient (dark blue)
+$blue-gradient-end: #1f326e;     // Ending color of gradient (lighter blue)

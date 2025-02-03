@@ -1,0 +1,59 @@
+/* Ensure draggable chapters render correctly */
+body.modal-open {
+    overflow: hidden !important;
+  }
+  
+  /* Ensure modal parent doesn’t block visibility */
+  .modal-dialog {
+    margin-top: 5%;
+  }
+  /* Ensure modal is centered properly */
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+.dnd-container {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  /* Individual draggable chapter item */
+  .draggable-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: grab;
+  }
+  
+  /* Ensure dragged item is visible */
+  .draggable-item:active {
+    cursor: grabbing;
+  }
+  
+  /* Ensure modal content is above other elements */
+  .modal {
+    z-index: 1050 !important;
+  }
+  /* Ensure modal is visible */
+.modal.show {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Ensure modal backdrop is displayed */
+  .modal-backdrop.show {
+    opacity: 0.5;
+  }
+  
+  /* Prevent modal content from being hidden */
+  .modal-content {
+    z-index: 1050; /* Bootstrap default modal z-index */
+    position: relative;
+  }
+  

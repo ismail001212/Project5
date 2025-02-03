@@ -1,0 +1,26 @@
+.modal-card {
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  .modal-card h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0d6efd;
+  }
+  
+  .modal-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-card p {
+    color: #6c757d;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  

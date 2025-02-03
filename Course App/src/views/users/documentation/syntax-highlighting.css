@@ -1,0 +1,35 @@
+/* Darcula theme for syntax highlighting */
+.token.keyword {
+    color: #cc99cc; /* Light purple for keywords */
+    font-weight: bold;
+  }
+  
+  .token.string {
+    color: #a0e5e1; /* Light cyan for strings */
+  }
+  
+  .token.number {
+    color: #f9f9f9; /* White for numbers */
+  }
+  
+  .token.variable {
+    color: #f8f8f2; /* Light grey for variables */
+  }
+  
+  .token.comment {
+    color: #608b4e; /* Olive green for comments */
+    font-style: italic;
+  }
+  
+  .token.operator {
+    color: #f8f8f2; /* White for operators */
+  }
+  
+  .token.other {
+    color: #f8f8f2; /* Default text color */
+  }
+  
+  .token.whitespace {
+    color: transparent; /* Make whitespace invisible */
+  }
+  

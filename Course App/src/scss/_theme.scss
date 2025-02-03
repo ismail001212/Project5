@@ -1,0 +1,148 @@
+body {
+  background-color: var(--cui-tertiary-bg);
+}
+
+.wrapper {
+  width: 100%;
+  @include ltr-rtl("padding-left", var(--cui-sidebar-occupy-start, 0));
+  @include ltr-rtl("padding-right", var(--cui-sidebar-occupy-end, 0));
+  will-change: auto;
+  @include transition(padding .15s);
+}
+
+.header > .container-fluid,
+.sidebar-header {
+  min-height: calc(4rem + 1px); // stylelint-disable-line function-disallowed-list
+}
+
+.sidebar-brand-full {
+  margin-left: 3px;
+}
+
+.sidebar-header {
+  .nav-underline-border {
+    --cui-nav-underline-border-link-padding-x: 1rem;
+    --cui-nav-underline-border-gap: 0;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: calc(4rem + 1px); // stylelint-disable-line function-disallowed-list
+  }
+}
+
+.sidebar-toggler {
+  @include ltr-rtl("margin-left", auto);
+}
+
+.sidebar-narrow,
+.sidebar-narrow-unfoldable:not(:hover) {
+  .sidebar-toggler {
+    @include ltr-rtl("margin-right", auto);
+  }
+}
+
+.header > .container-fluid + .container-fluid {
+  min-height: 3rem;
+}
+
+.footer {
+  min-height: calc(3rem + 1px); // stylelint-disable-line function-disallowed-list
+}
+
+// Ensure dark mode and blue mode are enabled
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    body {
+      background-color: var(--cui-dark-bg-subtle);
+    }
+
+    .footer {
+      --cui-footer-bg: var(--cui-body-bg);
+    }
+  }
+}
+@if $enable-blue-mode {
+  @include color-mode(blue) {
+    // General Body Styling with gradient background
+    body {
+      background: linear-gradient(135deg, $blue-gradient-start, $blue-gradient-end); // Gradient from dark to lighter blue
+      color: $blue-text; // Light text for good readability on dark backgrounds
+    }
+
+    // Footer Styling with gradient
+    .footer {
+      background: linear-gradient(135deg, $blue-gradient-start, $blue-gradient-end); // Gradient from dark to lighter blue
+      color: $blue-text; // White text for footer
+    }
+
+    // Navigation Bar Styling with gradient
+    .nav-bare {
+      background: linear-gradient(135deg, $blue-gradient-start, $blue-hover); // Darker gradient for hover effect
+      border-bottom: 2px solid $blue-border; // Lighter blue border under navbar
+      color: $blue-text; // Light text in navbar
+
+      
+    }
+
+    // Sidebar Styling with gradient
+    .sidebar-header {
+      background: linear-gradient(135deg, $blue-gradient-start, $blue-gradient-end); // Gradient from dark to lighter blue
+      color: $blue-text; // White text for sidebar
+    }
+    .men{
+      color: white;
+    }
+    .sidebar-nav {
+      .nav-link {
+        background: linear-gradient(135deg, $blue-gradient-start, $blue-hover); // Gradient hover effect for links
+
+        background: transparent; // Transparent background for nav links
+        color: $blue-text; // White text for nav links
+
+        &:hover {
+          background: linear-gradient(135deg, $blue-gradient-start, $blue-hover); // Gradient hover effect for links
+        }
+
+        &.active {
+          background: linear-gradient(135deg, $blue-gradient-start, $blue-primary); // Active link with gradient background
+        }
+      }
+    }
+
+    .simplebar-content {
+      background: linear-gradient(135deg, $blue-gradient-start, $blue-gradient-end); // Gradient from dark to lighter blue
+      color: $blue-text; // Light text color for readability
+    }
+
+    // Buttons Styling with gradient
+    .button {
+      background: linear-gradient(135deg, $blue-gradient-start, $blue-accent); // Gradient background for buttons
+      color: $blue-text; // White text for buttons
+      border: 1px solid $blue-border; // Light blue border for buttons
+
+      &:hover {
+        background: linear-gradient(135deg, $blue-gradient-start, $blue-primary); // Darker gradient for hover state
+      }
+    }
+
+    // Cards and Containers with gradient
+    .card {
+      background:rgb(205, 205, 207) ; // Gradient background for cards
+      border: 1px solid rgb(36, 48, 95); // Light blue border for card separation
+    }
+
+  
+    // Badges with gradient
+    .badge {
+      background: linear-gradient(135deg, $blue-gradient-start, $blue-accent); // Gradient background for badges
+      color: $blue-text; // White text for badges
+    }
+    .Model{
+      background: linear-gradient(135deg, $blue-gradient-start, $blue-accent); // Gradient background for badges
+      color: $blue-text; // White text for badges
+
+    }
+  }
+}
