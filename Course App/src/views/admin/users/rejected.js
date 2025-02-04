@@ -69,7 +69,7 @@ const User = () => {
     // Fetching user data from API
     setLoading(true); // Start loading
     axios
-      .get('http://localhost:5000/api/auth/user/rejected', {
+      .get('https://gptlearner.com/api/auth/user/rejected', {
         headers: {
           Authorization: `Bearer ${token}`, // Pass the token in the Authorization header
         },
@@ -124,7 +124,7 @@ const User = () => {
           return;
         }
 
-        const response = await fetch(`http://localhost:5000/api/auth/user/${decoded.id}`, {
+        const response = await fetch(`https://gptlearner.com/api/auth/user/${decoded.id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -184,8 +184,8 @@ const User = () => {
     }
 
     const url = isEditing
-      ? `http://localhost:5000/api/auth/updateUserByEmail/${newUser.email}` // Update user by email
-      : 'http://localhost:5000/api/auth/user'; // Create new user
+      ? `https://gptlearner.com/api/auth/updateUserByEmail/${newUser.email}` // Update user by email
+      : 'https://gptlearner.com/api/auth/user'; // Create new user
 
     const method = 'POST'; // Using POST for both creation and updating
 
@@ -241,7 +241,7 @@ const User = () => {
     }
 
     axios
-      .delete(`http://localhost:5000/api/auth/user/${email}`, {
+      .delete(`https://gptlearner.com/api/auth/user/${email}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
