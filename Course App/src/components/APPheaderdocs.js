@@ -33,7 +33,6 @@ const APPheaderdocs = ({ selectedLanguage, setSelectedLanguage }) => {
   const sidebarShow = useSelector((state) => state.sidebarShow);
   const navigate = useNavigate();
 
-
   // Sample user information (you could fetch this from your global state or API)
   const user = useSelector(state => state.user); // Assume `state.user` holds user information
   const { name, avatar } = user || {}; // Destructure user info
@@ -80,7 +79,7 @@ const APPheaderdocs = ({ selectedLanguage, setSelectedLanguage }) => {
 
     try {
       // Make an API call to deactivate the user
-      const response = await fetch('http://localhost:5000/api/auth/logout', {
+      const response = await fetch('https://gptlearner.com/api/auth/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,10 +101,7 @@ const APPheaderdocs = ({ selectedLanguage, setSelectedLanguage }) => {
   const handleThemeChange = (mode) => {
      setColorMode(mode); 
      window.location.reload();
-
-
   };
-
 
   useEffect(() => {
     document.body.setAttribute('data-theme', colorMode); // Sync theme with body attribute
@@ -115,7 +111,7 @@ const APPheaderdocs = ({ selectedLanguage, setSelectedLanguage }) => {
   useEffect(() => {
     const fetchCategoryId = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/auth/courses/${course_Id}`);
+        const response = await fetch(`https://gptlearner.com/api/auth/courses/${course_Id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch course details');
         }
@@ -132,7 +128,6 @@ const APPheaderdocs = ({ selectedLanguage, setSelectedLanguage }) => {
       fetchCategoryId();
     }
   }, [course_Id]);
-  
   
   console.log(categoryId)
 
@@ -293,7 +288,7 @@ const APPheaderdocs = ({ selectedLanguage, setSelectedLanguage }) => {
       </div>
     </CContainer>
   </CHeader>
-     );
+  );
 };
 
 export default APPheaderdocs;
