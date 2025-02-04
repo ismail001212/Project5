@@ -392,7 +392,7 @@ const Contentchapter = () => {
   
     // Save the new order to the backend
     try {
-      await axios.put('http://localhost:5000/api/auth/updateIndexes', { items: updatedItems });
+      await axios.put('https://gptlearner.com/api/auth/updateIndexes', { items: updatedItems });
     } catch (error) {
       console.error('Error updating indexes:', error);
     }
@@ -405,7 +405,7 @@ const Contentchapter = () => {
         case 'subtitle':
         case 'description':
         case 'image':
-          await axios.delete(`http://localhost:5000/api/auth/deleteContent/${id}`, { data: { type } });
+          await axios.delete(`https://gptlearner.com/api/auth/deleteContent/${id}`, { data: { type } });
           break;
         case 'codeSnippet':
           await handleDeleteCodeSnippet(id, updateContent, chapter);
