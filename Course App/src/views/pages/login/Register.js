@@ -111,7 +111,7 @@ const Register = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('https://gptlearner.com/api/auth/register', {
         fullname: formData.fullname,
         phone: formData.phone,
         email: formData.email,
@@ -130,7 +130,7 @@ const Register = () => {
 
   const handleResendVerification = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/resend-verification', {
+      const response = await axios.post('https://gptlearner.com/api/auth/resend-verification', {
         email: formData.email,
       });
       if (response.status === 200) {
