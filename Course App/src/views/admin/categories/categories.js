@@ -61,7 +61,7 @@ const Category = () => {const [categories, setCategories] = useState([]);
   const fetchCategories = () => {
     const token = localStorage.getItem('token');
     axios
-      .get('http://localhost:5000/api/auth/categories', {
+      .get('http://https://gptlearner.com/api/auth/categories', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -101,8 +101,8 @@ const Category = () => {const [categories, setCategories] = useState([]);
       }
 
       const url = isEditing
-        ? `http://localhost:5000/api/auth/categories/${newCategory._id}`
-        : 'http://localhost:5000/api/auth/categories';
+        ? `https://gptlearner.com/api/auth/categories/${newCategory._id}`
+        : 'https://gptlearner.com/api/auth/categories';
       const method = isEditing ? 'PUT' : 'POST';
 
       await axios({
@@ -155,7 +155,7 @@ const Category = () => {const [categories, setCategories] = useState([]);
 
       // Make the delete request to your API
       axios
-        .delete(`http://localhost:5000/api/auth/categories/${categoryId}`, {
+        .delete(`https://gptlearner.com/api/auth/categories/${categoryId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then(() => {
@@ -303,7 +303,7 @@ const Category = () => {const [categories, setCategories] = useState([]);
           {categoryDetails.categoryImage && (
             <div className="text-center mb-4">
               <img
-                src={`http://localhost:5000/uploads/${categoryDetails.categoryImage}`}
+                src={`https://gptlearner.com/uploads/${categoryDetails.categoryImage}`}
                 alt={categoryDetails.name}
                 width={100}
                 className="d-block mx-auto"
