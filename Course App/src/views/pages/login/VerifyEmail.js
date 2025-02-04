@@ -21,7 +21,7 @@ const VerifyEmail = () => {
       }
 
       try {
-        await axios.get(`http://localhost:5000/api/auth/verify-email?token=${token}`);
+        await axios.get(`https://gptlearner.com/api/auth/verify-email?token=${token}`);
         setMessage('Email verified successfully! Redirecting to login...');
         setStatus('success');
         setLoading(false);
