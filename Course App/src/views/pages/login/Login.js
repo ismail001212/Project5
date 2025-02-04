@@ -76,7 +76,7 @@ const Login = () => {
     setError('')
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData)
+      const response = await axios.post('https://gptlearner.com/api/auth/login', formData)
       const { token, user } = response.data
       setUser(user)
 
@@ -109,7 +109,7 @@ const Login = () => {
         localStorage.setItem('token', token)
         sessionStorage.setItem('token', token)
 
-        await axios.post('http://localhost:5000/api/auth/updateActif', {
+        await axios.post('https://gptlearner.com/api/auth/updateActif', {
           userId: user.id,
           Actif: true,
         })
@@ -132,7 +132,7 @@ const Login = () => {
 
   const handleResendVerification = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/resend-verification', {
+      const response = await axios.post('https://gptlearner.com/api/auth/resend-verification', {
         email: formData.email,
       })
       if (response.status === 200) {
