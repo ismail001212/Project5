@@ -60,7 +60,7 @@ const ChapterPage = () => {
 
   const fetchChapters = async (courseId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/auth/chapters/course/${courseId}`);
+      const response = await axios.get(`https://gptlearner.com/api/auth/chapters/course/${courseId}`);
       setChapters(response.data);
     } catch (error) {
       console.error('Error fetching chapters:', error);
@@ -98,9 +98,9 @@ const ChapterPage = () => {
   const handleSaveChapter = async () => {
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/auth/chapters/${editingChapter}`, newChapter);
+        await axios.put(`https://gptlearner.com/api/auth/chapters/${editingChapter}`, newChapter);
       } else {
-        await axios.post('http://localhost:5000/api/auth/chapters', {
+        await axios.post('https://gptlearner.com/api/auth/chapters', {
           ...newChapter,
           course: course._id,
           language: currentLanguage,
@@ -141,7 +141,7 @@ const ChapterPage = () => {
     }));
 
     try {
-      const response = await axios.put('http://localhost:5000/api/auth/chapters/reorder', {
+      const response = await axios.put('https://gptlearner.com/api/auth/chapters/reorder', {
         order: finalOrder,  // Send the updated order with new indexes
       });
 
@@ -160,7 +160,7 @@ const ChapterPage = () => {
   // Handle Delete Chapter
   const handleDeleteChapter = async (chapterId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/auth/chapters/${chapterId}`);
+      await axios.delete(`https://gptlearner.com/api/auth/chapters/${chapterId}`);
       const updatedChapters = chapters.filter((chapter) => chapter._id !== chapterId);
 
       const reorderedChapters = updatedChapters.map((chapter, index) => ({
@@ -173,7 +173,7 @@ const ChapterPage = () => {
         index: chapter.index,
       }));
 
-      await axios.put('http://localhost:5000/api/auth/chapters/reorder', {
+      await axios.put('https://gptlearner.com/api/auth/chapters/reorder', {
         order: finalOrder,  // Send the updated order with new indexes
       });
 
@@ -201,7 +201,7 @@ const ChapterPage = () => {
             <CRow>
             <CCol md={4} className="d-flex justify-content-center align-items-center">
             <CCardImage
-                src={`http://localhost:5000/uploads/${course.courseimage}`}
+                src={`https://gptlearner.com/uploads/${course.courseimage}`}
                 alt="Course"
                 className="mb-3 rounded"
                 style={{ width: '100px', height: '100px', objectFit: 'cover' }}
