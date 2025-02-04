@@ -1,42 +1,42 @@
 import axios from 'axios';
 
 export const fetchContent = async (chapterId) => {
-    const response = await axios.get(`http://localhost:5000/api/auth/titles/${chapterId}`);
+    const response = await axios.get(`https://gptlearner.com/api/auth/titles/${chapterId}`);
     return response.data; // Ensure this returns an array
   };
   
   export const fetchSubtitle = async (chapterId) => {
-    const response = await axios.get(`http://localhost:5000/api/auth/subtitles/${chapterId}`);
+    const response = await axios.get(`https://gptlearner.com/api/auth/subtitles/${chapterId}`);
     return response.data; // Ensure this returns an array
   };
   
   export const fetchDescription = async (chapterId) => {
-    const response = await axios.get(`http://localhost:5000/api/auth/descriptions/${chapterId}`);
+    const response = await axios.get(`https://gptlearner.com/api/auth/descriptions/${chapterId}`);
     return response.data; // Ensure this returns an array
   };
   
   export const fetchImage = async (chapterId) => {
-    const response = await axios.get(`http://localhost:5000/api/auth/images/${chapterId}`);
+    const response = await axios.get(`https://gptlearner.com/api/auth/images/${chapterId}`);
     return response.data; // Ensure this returns an array
   };
   
   export const fetchCodeSnippets = async (chapterId) => {
-    const response = await axios.get(`http://localhost:5000/api/auth/code-snippets/${chapterId}`);
+    const response = await axios.get(`https://gptlearner.com/api/auth/code-snippets/${chapterId}`);
     return response.data; // Ensure this returns an array
   };
   
   export const fetchNotes = async (chapterId) => {
-    const response = await axios.get(`http://localhost:5000/api/auth/notes/${chapterId}`);
+    const response = await axios.get(`https://gptlearner.com/api/auth/notes/${chapterId}`);
     return response.data; // Ensure this returns an array
   };
   
   export const fetchLists = async (chapterId) => {
-    const response = await axios.get(`http://localhost:5000/api/auth/lists/${chapterId}`);
+    const response = await axios.get(`https://gptlearner.com/api/auth/lists/${chapterId}`);
     return response.data; // Ensure this returns an array
   };
   export const getLastIndex = async (chapterId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/auth/lastIndex/${chapterId}`);
+      const response = await axios.get(`https://gptlearner.com/api/auth/lastIndex/${chapterId}`);
       return response.data.lastIndex + 1;
     } catch (error) {
       console.error('Error fetching index:', error);
@@ -50,9 +50,9 @@ export const fetchContent = async (chapterId) => {
         newContent.index = nextIndex;
       }
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/auth/titles/${id}`, newContent);
+        await axios.put(`https://gptlearner.com/api/auth/titles/${id}`, newContent);
       } else {
-        await axios.post('http://localhost:5000/api/auth/titles', newContent);
+        await axios.post('https://gptlearner.com/api/auth/titles', newContent);
       }
       const updatedTitles = await fetchContent(chapter);
       updateContent(updatedTitles, 'title');
@@ -69,9 +69,9 @@ export const fetchContent = async (chapterId) => {
         newSubtitle.index = nextIndex;
       }
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/auth/subtitles/${id}`, newSubtitle);
+        await axios.put(`https://gptlearner.com/api/auth/subtitles/${id}`, newSubtitle);
       } else {
-        await axios.post('http://localhost:5000/api/auth/subtitles', newSubtitle);
+        await axios.post('https://gptlearner.com/api/auth/subtitles', newSubtitle);
       }
       const updatedSubtitles = await fetchSubtitle(chapter);
       updateContent(updatedSubtitles, 'subtitle');
@@ -88,9 +88,9 @@ export const fetchContent = async (chapterId) => {
         newDescription.index = nextIndex;
       }
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/auth/descriptions/${id}`, newDescription);
+        await axios.put(`https://gptlearner.com/api/auth/descriptions/${id}`, newDescription);
       } else {
-        await axios.post('http://localhost:5000/api/auth/descriptions', newDescription);
+        await axios.post('https://gptlearner.com/api/auth/descriptions', newDescription);
       }
       const updatedDescriptions = await fetchDescription(chapter);
       updateContent(updatedDescriptions, 'description');
@@ -107,9 +107,9 @@ export const fetchContent = async (chapterId) => {
         newImage.index = nextIndex;
       }
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/auth/images/${id}`, newImage);
+        await axios.put(`https://gptlearner.com/api/auth/images/${id}`, newImage);
       } else {
-        await axios.post('http://localhost:5000/api/auth/images', newImage);
+        await axios.post('https://gptlearner.com/api/auth/images', newImage);
       }
       const updatedImages = await fetchImage(chapter);
       updateContent(updatedImages, 'image');
@@ -126,9 +126,9 @@ export const fetchContent = async (chapterId) => {
         newCodeSnippet.index = nextIndex;
       }
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/auth/code-snippets/${id}`, newCodeSnippet);
+        await axios.put(`https://gptlearner.com/api/auth/code-snippets/${id}`, newCodeSnippet);
       } else {
-        await axios.post('http://localhost:5000/api/auth/code-snippets', newCodeSnippet);
+        await axios.post('https://gptlearner.com/api/auth/code-snippets', newCodeSnippet);
       }
       const updatedCodeSnippets = await fetchCodeSnippets(chapter);
       updateContent(updatedCodeSnippets, 'codeSnippet');
@@ -145,9 +145,9 @@ export const fetchContent = async (chapterId) => {
         newNote.index = nextIndex;
       }
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/auth/notes/${id}`, newNote);
+        await axios.put(`https://gptlearner.com/api/auth/notes/${id}`, newNote);
       } else {
-        await axios.post('http://localhost:5000/api/auth/notes', newNote);
+        await axios.post('https://gptlearner.com/api/auth/notes', newNote);
       }
       const updatedNotes = await fetchNotes(chapter);
       updateContent(updatedNotes, 'note');
@@ -164,9 +164,9 @@ export const fetchContent = async (chapterId) => {
         newList.index = nextIndex;
       }
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/auth/lists/${id}`, newList);
+        await axios.put(`https://gptlearner.com/api/auth/lists/${id}`, newList);
       } else {
-        await axios.post('http://localhost:5000/api/auth/lists', newList);
+        await axios.post('https://gptlearner.com/api/auth/lists', newList);
       }
       const updatedLists = await fetchLists(chapter);
       updateContent(updatedLists, 'list');
@@ -178,13 +178,13 @@ export const fetchContent = async (chapterId) => {
   export const fetchAllContent = async (chapterId) => {
     try {
       const [titles, subtitles, descriptions, images, codeSnippets, notes, lists] = await Promise.all([
-        axios.get(`http://localhost:5000/api/auth/titles/${chapterId}`),
-        axios.get(`http://localhost:5000/api/auth/subtitles/${chapterId}`),
-        axios.get(`http://localhost:5000/api/auth/descriptions/${chapterId}`),
-        axios.get(`http://localhost:5000/api/auth/images/${chapterId}`),
-        axios.get(`http://localhost:5000/api/auth/code-snippets/${chapterId}`),
-        axios.get(`http://localhost:5000/api/auth/notes/${chapterId}`),
-        axios.get(`http://localhost:5000/api/auth/lists/${chapterId}`)
+        axios.get(`https://gptlearner.com/api/auth/titles/${chapterId}`),
+        axios.get(`https://gptlearner.com/api/auth/subtitles/${chapterId}`),
+        axios.get(`https://gptlearner.com/api/auth/descriptions/${chapterId}`),
+        axios.get(`https://gptlearner.com/api/auth/images/${chapterId}`),
+        axios.get(`https://gptlearner.com/api/auth/code-snippets/${chapterId}`),
+        axios.get(`https://gptlearner.com/api/auth/notes/${chapterId}`),
+        axios.get(`https://gptlearner.com/api/auth/lists/${chapterId}`)
       ]);
   
       return {
@@ -215,7 +215,7 @@ export const fetchContent = async (chapterId) => {
 
   export const handleDeleteCodeSnippet = async (id, updateContent, chapter) => {
     try {
-      await axios.delete(`http://localhost:5000/api/auth/code-snippets/${id}`);
+      await axios.delete(`https://gptlearner.com/api/auth/code-snippets/${id}`);
       const updatedCodeSnippets = await fetchCodeSnippets(chapter);
       updateContent(updatedCodeSnippets, 'codeSnippet');
     } catch (error) {
@@ -228,7 +228,7 @@ export const fetchContent = async (chapterId) => {
 
   export const handleDeleteNote = async (id, updateContent, chapter) => {
     try {
-      await axios.delete(`http://localhost:5000/api/auth/notes/${id}`);
+      await axios.delete(`https://gptlearner.com/api/auth/notes/${id}`);
       const updatedNotes = await fetchNotes(chapter);
       updateContent(updatedNotes, 'note');
     } catch (error) {
@@ -240,7 +240,7 @@ export const fetchContent = async (chapterId) => {
 
   export const handleDeleteList = async (id, updateContent, chapter) => {
     try {
-      await axios.delete(`http://localhost:5000/api/auth/lists/${id}`);
+      await axios.delete(`https://gptlearner.com/api/auth/lists/${id}`);
       const updatedLists = await fetchLists(chapter);
       updateContent(updatedLists, 'list');
     } catch (error) {
