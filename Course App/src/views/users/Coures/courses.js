@@ -43,7 +43,7 @@ const Courses = () => {
     setLoading(true);
 
     axios
-      .get(`http://localhost:5000/api/auth/categories/${categoryId}/courses`, {
+      .get(`https://gptlearner.com/api/auth/categories/${categoryId}/courses`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -133,7 +133,7 @@ const Courses = () => {
                     <CCard className="shadow-lg category-card d-flex flex-column">
                       <CCardHeader className="text-center p-4">
                         <img
-                          src={`http://localhost:5000/uploads/${course.courseimage}`}
+                          src={`https://gptlearner.com/uploads/${course.courseimage}`}
                           alt={course.name}
                           width={100}
                           className="d-block mx-auto"
