@@ -83,7 +83,7 @@ const AppHeader = () => {
 
     try {
       // Make an API call to deactivate the user
-      const response = await fetch('http://localhost:5000/api/auth/logout', {
+      const response = await fetch('https://gptlearner.com/api/auth/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
