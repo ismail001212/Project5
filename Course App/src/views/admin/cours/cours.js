@@ -67,7 +67,7 @@ const Course = () => {
   const fetchCourses = () => {
     const token = localStorage.getItem('token');
     axios
-      .get('http://localhost:5000/api/auth/courses', {
+      .get('https://gptlearner.com/api/auth/courses', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -88,7 +88,7 @@ const Course = () => {
   const fetchCategories = () => {
     const token = localStorage.getItem('token');
     axios
-      .get('http://localhost:5000/api/auth/categories', {
+      .get('https://gptlearner.com/api/auth/categories', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -119,8 +119,8 @@ const Course = () => {
       }
 
       const url = isEditing
-        ? `http://localhost:5000/api/auth/courses/${newCourse._id}`
-        : 'http://localhost:5000/api/auth/courses';
+        ? `https://gptlearner.com/api/auth/courses/${newCourse._id}`
+        : 'https://gptlearner.com/api/auth/courses';
 
       const method = isEditing ? 'PUT' : 'POST';
 
@@ -188,7 +188,7 @@ const Course = () => {
 
       // Make the delete request to your API
       axios
-        .delete(`http://localhost:5000/api/auth/courses/${courseId}`, {
+        .delete(`https://gptlearner.com/api/auth/courses/${courseId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then(() => {
