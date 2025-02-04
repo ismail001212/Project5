@@ -28,7 +28,7 @@ const PrivateRoute = ({ children }) => {
       // Clear localStorage and update backend
       setUserData((prevData) => ({ ...prevData, Actif: false }));
       localStorage.removeItem('token');
-      await fetch('http://localhost:5000/api/auth/logout', {
+      await fetch('https://gptlearner.com/api/auth/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ const PrivateRoute = ({ children }) => {
         }
 
         const response = await fetch(
-          `http://localhost:5000/api/auth/user/${decoded.id}`,
+          `https://gptlearner.com/api/auth/user/${decoded.id}`,
           {
             method: 'GET',
             headers: {
