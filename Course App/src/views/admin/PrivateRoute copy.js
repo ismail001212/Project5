@@ -26,7 +26,7 @@ const PrivateRoute = ({ children }) => {
       setUserData((prevData) => ({ ...prevData, Actif: false }));
 
       // Call backend to log out user and set Actif to false
-      await fetch('http://localhost:5000/api/auth/logout', {
+      await fetch('https://gptlearner.com/api/auth/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ return () => clearInterval(interval);
           return;
         }
 
-        const response = await fetch(`http://localhost:5000/api/auth/user/${decoded.id}`, {
+        const response = await fetch(`https://gptlearner.com/api/auth/user/${decoded.id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
