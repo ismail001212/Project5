@@ -37,7 +37,7 @@ const PopupPage = () => {
 
     const fetchElementContent = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/auth/element/${elementId}`);
+        const response = await axios.get(`https://gptlearner.com/api/auth/element/${elementId}`);
         setElementType(response.data.type);
         setElementContent(response.data.content);
         console.log(elementContent)
@@ -48,7 +48,7 @@ const PopupPage = () => {
 
     const fetchPopups = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/auth/popups/${elementId}`);
+        const response = await axios.get(`https://gptlearner.com/api/auth/popups/${elementId}`);
         setPopups(response.data);
       } catch (error) {
         console.error('Error fetching pop-ups:', error);
@@ -62,7 +62,7 @@ const PopupPage = () => {
   const handleWordClick = async (uniqueId, word) => {
     setSelectedWord(word);
     try {
-      const response = await axios.get(`http://localhost:5000/api/auth/getpopup`, {
+      const response = await axios.get(`https://gptlearner.com/api/auth/getpopup`, {
         params: {
           element_id: elementId,
           word_or_phrase: uniqueId
@@ -92,18 +92,18 @@ const PopupPage = () => {
 
       if (existingPopup) {
         // If popup exists, update it (PUT request)
-        const response = await axios.put(`http://localhost:5000/api/auth/popups/${existingPopup._id}`, newPopup);
+        const response = await axios.put(`https://gptlearner.com/api/auth/popups/${existingPopup._id}`, newPopup);
         console.log('Popup updated:', response.data);
       } else {
         // Otherwise, create a new popup (POST request)
-        const response = await axios.post(`http://localhost:5000/api/auth/popups`, newPopup);
+        const response = await axios.post(`https://gptlearner.com/api/auth/popups`, newPopup);
         console.log('Popup created:', response.data);
       }
 
       setPopupVisible(false);
 
       // Fetch and update the list of popups after the update operation
-      const popupsResponse = await axios.get(`http://localhost:5000/api/auth/popups/${elementId}`);
+      const popupsResponse = await axios.get(`https://gptlearner.com/api/auth/popups/${elementId}`);
       setPopups(popupsResponse.data);
     } catch (error) {
       if (error.response) {
@@ -125,7 +125,7 @@ const PopupPage = () => {
       console.log('Deleting popup:', newPopup._id); // Logging the popup ID for debugging
 
       // Send DELETE request to the backend
-      const response = await axios.delete(`http://localhost:5000/api/auth/popups/${newPopup._id}`);
+      const response = await axios.delete(`https://gptlearner.com/api/auth/popups/${newPopup._id}`);
 
       if (response.status === 200) {
         console.log('Popup deleted successfully');
@@ -138,7 +138,7 @@ const PopupPage = () => {
       setPopupVisible(false);
 
       // Fetch the updated list of popups
-      const popupsResponse = await axios.get(`http://localhost:5000/api/auth/popups/${elementId}`);
+      const popupsResponse = await axios.get(`https://gptlearner.com/api/auth/popups/${elementId}`);
 
       // Update the state with the new list of popups
       setPopups(popupsResponse.data);
