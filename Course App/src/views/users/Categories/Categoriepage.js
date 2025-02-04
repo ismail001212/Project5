@@ -44,7 +44,7 @@ const EnglishPage = () => {
     setLoading(true);
     setError(null);
     axios
-      .get('http://localhost:5000/api/auth/categories', {
+      .get('https://gptlearner.com/api/auth/categories', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -142,7 +142,7 @@ const EnglishPage = () => {
                     <CCard className="shadow-lg category-card d-flex flex-column">
                       <CCardHeader className="text-center p-4">
                         <img
-                          src={`http://localhost:5000/uploads/${category.categoryImage}`}
+                          src={`https://gptlearner.com/uploads/${category.categoryImage}`}
                           alt={category.name}
                           width={100}
                           className="d-block mx-auto" // Ensures image is centered
