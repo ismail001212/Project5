@@ -26,7 +26,7 @@ const AppSidebar = () => {
   const fetchChapters = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/auth/chapters/course/${course_Id}`
+        `https://gptlearner.com/api/auth/chapters/course/${course_Id}`
       );
   
       const chapters = response.data.map((chapter) => ({
