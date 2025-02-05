@@ -106,7 +106,7 @@ const Contentchapter = () => {
                     setContent(allContent);
 
                     const popupRequests = allContent.map((item) =>
-                        axios.get(`http://localhost:5000/api/auth/popups/${item._id}`).then((res) => ({
+                        axios.get(`https://gptlearner.com/api/auth/popups/${item._id}`).then((res) => ({
                             elementId: item._id,
                             popups: res.data,
                         }))
@@ -132,13 +132,13 @@ const Contentchapter = () => {
     const fetchAllContent = async (chapter) => {
         try {
             const [titles, subtitles, descriptions, images, codeSnippets, notes, lists] = await Promise.all([
-                axios.get(`http://localhost:5000/api/auth/titles/${chapter}`),
-                axios.get(`http://localhost:5000/api/auth/subtitles/${chapter}`),
-                axios.get(`http://localhost:5000/api/auth/descriptions/${chapter}`),
-                axios.get(`http://localhost:5000/api/auth/images/${chapter}`),
-                axios.get(`http://localhost:5000/api/auth/code-snippets/${chapter}`),
-                axios.get(`http://localhost:5000/api/auth/notes/${chapter}`),
-                axios.get(`http://localhost:5000/api/auth/lists/${chapter}`),
+                axios.get(`https://gptlearner.com/api/auth/titles/${chapter}`),
+                axios.get(`https://gptlearner.com/api/auth/subtitles/${chapter}`),
+                axios.get(`https://gptlearner.com/api/auth/descriptions/${chapter}`),
+                axios.get(`https://gptlearner.com/api/auth/images/${chapter}`),
+                axios.get(`https://gptlearner.com/api/auth/code-snippets/${chapter}`),
+                axios.get(`https://gptlearner.com/api/auth/notes/${chapter}`),
+                axios.get(`https://gptlearner.com/api/auth/lists/${chapter}`),
             ]);
 
             return {
@@ -166,7 +166,7 @@ const Contentchapter = () => {
 
     const fetchPopupContent = async (elementId, uniqueId) => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/auth/getpopup`, {
+            const response = await axios.get(`https://gptlearner.com/api/auth/getpopup`, {
                 params: {
                     element_id: elementId,
                     word_or_phrase: uniqueId,
