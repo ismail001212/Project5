@@ -36,6 +36,7 @@ const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
 
 // Start server on all network interfaces so it's accessible externally
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on http://0.0.0.0:${PORT}. Public URL: ${process.env.FRONTEND_URL}`);
+app.listen(PORT, "::", () => {
+  console.log(`Server running on port ${PORT} (IPv4 & IPv6)`);
 });
+
