@@ -32,7 +32,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 // Import Routes
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
-// Start Server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}. Public URL: https://gptlearner.com`);
+// Start Server: Bind to all interfaces ("0.0.0.0") so that it is accessible externally.
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on http://0.0.0.0:${PORT}. Public URL: https://gptlearner.com`);
 });
