@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display JavaScript Code</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #282c34;
+      color: #abb2bf;
+      margin: 0;
+      padding: 20px;
+    }
+    pre {
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+    }
+    .keyword { color: #c678dd; font-weight: bold; }
+    .string { color: #98c379; }
+    .type { color: #56b6c2; }
+    .comment { color: #5c6370; font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <h1>Display JavaScript Code Example</h1>
+  <pre><code>
+<span class="keyword">const</span> mongoose = <span class="keyword">require</span>(<span class="string">'mongoose'</span>);
+
+<span class="keyword">const</span> listSchema = <span class="keyword">new</span> mongoose.Schema({
+  courseId: { type: mongoose.Schema.Types.ObjectId, ref: <span class="string">'Course'</span>, required: <span class="keyword">true</span> },
+  chapterId: { type: mongoose.Schema.Types.ObjectId, ref: <span class="string">'Chapter'</span>, required: <span class="keyword">true</span> },
+  language: { type: <span class="type">String</span>, required: <span class="keyword">true</span> },
+  index: { type: <span class="type">Number</span>, required: <span class="keyword">true</span> }, <span class="comment">// Order of the list item in the list</span>
+  item: { type: <span class="type">String</span>, required: <span class="keyword">true</span> } <span class="comment">// Content of the list item</span>
+});
+
+module.exports = mongoose.model(<span class="string">'List'</span>, listSchema);
+  </code></pre>
+
+</body>
+</html>

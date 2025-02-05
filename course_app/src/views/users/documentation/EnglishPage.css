@@ -1,0 +1,41 @@
+.token.keyword {
+  color: #d73a49; /* Keyword color */
+  font-weight: bold;
+}
+
+.token.string {
+  color: #032f62; /* String color */
+}
+
+.token.number {
+  color: #005cc5; /* Number color */
+}
+
+.token.variable {
+  color: #6f42c1; /* Variable color */
+}
+
+.token.whitespace {
+  color: transparent; /* Do not display whitespace */
+}
+
+.token.comment {
+  color: #6a737d; /* Comment color */
+}
+
+.token.other {
+  color: #24292f; /* Default color for other types */
+}
+
+.token {
+  font-family: 'Courier New', monospace;
+}
+.popup-word {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #e47234; /* Highlight color */
+}
+
+.popup-word:hover {
+  color: #ff6347; /* Hover color */
+}

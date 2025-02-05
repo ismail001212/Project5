@@ -1,0 +1,38 @@
+/* Global Styles for Purple Theme */
+body[data-theme='purple'] {
+    background-color: #6a1b9a;  /* Purple background */
+    color: white; /* Text color */
+  }
+  
+  /* Navbar for purple theme */
+  body[data-theme='purple'] .navbar {
+    background-color: #6a1b9a;  /* Purple navbar */
+    color: white;
+  }
+  
+  /* Button Styles for purple theme */
+  body[data-theme='purple'] .btn-primary {
+    background-color: #6a1b9a;
+    border-color: #6a1b9a;
+  }
+  
+  body[data-theme='purple'] .btn-primary:hover {
+    background-color: #4a148c;
+    border-color: #4a148c;
+  }
+  
+  /* Link styles for purple theme */
+  body[data-theme='purple'] a {
+    color: #ba68c8; /* Light purple link color */
+  }
+  
+  body[data-theme='purple'] a:hover {
+    color: #9c27b0; /* Darker purple on hover */
+  }
+  
+  /* Example for custom purple card background */
+  body[data-theme='purple'] .card {
+    background-color: #9c4dcc;
+    color: white;
+  }
+  
